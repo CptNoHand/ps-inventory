@@ -23,7 +23,7 @@
       <div id="qbcore-inventory">
             <div class="inventory-info">
                 <div class="player-inv-info">
-                    <span id="player-inv-label" class="player-inv-label">Player</span><br>
+                  <span id="player-inv-label"><span id='player-cash'>$0</span></span><br>
                     <!-- <img class="weight-img" src="images/weight.png"> -->
                         <div>
                             <div id="progressbar">
@@ -58,11 +58,11 @@
                       </div> -->
                       <input  type="number" id="item-amount" class="inv-option-item" min=1 max="10000" placeholder="0"
                       pattern="[0-9]" onfocus="this.value=''" placeholder="" oninput="validity.valid||(value='');"></input>
-                      <div class="inv-option-item" id="item-use"><p>Use</p></div> 
+                      <div class="inv-option-item" id="item-use"><p>Nutzen</p></div> 
                       <!-- <img class="inv-option-hand" id= "item-use" src="images/hand-1.png">  -->
-                      <div class="inv-option-item" id="item-give"><p>Give</p></div>
+                      <div class="inv-option-item" id="item-give"><p>Geben</p></div>
                       <div class="combine-option-container">
-                          <div class="btn-combine CombineItem"><p>Combine</p></div>
+                          <div class="btn-combine CombineItem"><p>Kombinieren</p></div>
                           <!-- <div class="btn-combine SwitchItem"><p>Switch</p></div> -->
                       </div> 
                   </div>
