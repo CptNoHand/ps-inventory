@@ -581,7 +581,7 @@ function FormatItemInfo(itemData, dom) {
             }
             if (itemData.info.attachments != null) {
                 $.post(
-                    "https://ps-inventory/GetWeaponData",
+                    "https://qb-inventory/GetWeaponData",
                     JSON.stringify({
                         weapon: itemData.name,
                         ItemData: itemData,
