@@ -446,17 +446,6 @@ $(document).on("click", "#weapon-attachments", function(e) {
 });
 
 function FormatItemInfo(itemData, dom) {
-
-    let phoneMeta = ['phone', 'black_phone', 'yellow_phone', 'white_phone', 'red_phone', 'green_phone']
-    if (phoneMeta.includes(itemData.name)) {
-        return "<p><strong>Phone Number: </strong><span>" +
-            itemData.info.phoneNumber +
-            "</span></p><p><strong>Firstname: </strong><span>" +
-            itemData.info.charinfo.firstname +
-            "</span></p><p><strong>Lastname: </strong><span>" +
-            itemData.info.charinfo.lastname +
-            "</span></p>";
-    }
     let element = $('.ply-iteminfo-container');
     let itemOffset = $(dom).offset();
     element.css('top', itemOffset.top - element.height());
@@ -530,6 +519,11 @@ function FormatItemInfo(itemData, dom) {
                 itemData.info.citizenid +
                 "</span></p>"
             );
+        } else if (itemData.name == "phone" || itemData.name == "black_phone"||itemData.name == "yellow_phone"||itemData.name == "white_phone"||itemData.name == "red_phone"||itemData.name == "green_phone") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p><strong>Phone Number: </strong><span>" + itemData.info.phoneNumber + '</span></p>' + "</span></p><p><strong>Firstname: </strong><span>" + itemData.info.charinfo.firstname + '</span></p>' + "</span></p><p><strong>Lastname: </strong><span>" + itemData.info.charinfo.lastname + '</span></p>'
+            ); 
         } else if (itemData.name == "syphoningkit") { // Syphoning Kit (CDN-Fuel or CDN-Syphoning!)
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             $(".item-info-description").html(
@@ -2830,7 +2824,7 @@ var requiredItemOpen = false;
             $("#rob-money").remove();
         }
         $.post("https://qb-inventory/CloseInventory", JSON.stringify({}));
-
+        $('#item-amount').val(''); // reset amount input
         if (AttachmentScreenActive) {
             $("#qbcore-inventory").css({ left: "0vw" });
             $(".weapon-attachments-container").css({ left: "-100vw" });

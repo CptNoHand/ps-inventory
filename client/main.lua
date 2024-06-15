@@ -646,6 +646,10 @@ RegisterNetEvent('inventory:client:CheckWeapon', function(weaponName)
     currentWeapon = nil
 end)
 
+RegisterCommand('createweapon', function(source)
+    exports.drx_mdt:CreateWeapon("serial", { src = source }, "model", "label")
+  end)
+
 RegisterNetEvent('inventory:client:AddDropItem', function(dropId, player, coords)
     local forward = GetEntityForwardVector(GetPlayerPed(GetPlayerFromServerId(player)))
     local x, y, z = table.unpack(coords + forward * 0.5)
@@ -802,7 +806,11 @@ for i = 1, 6 do
             if i == 6 then
                 i = Config.MaxInventorySlots
             end
-            TriggerServerEvent("inventory:server:UseItemSlot", i)
+            if not exports['qs-smartphone-pro']:InPhone(source) then
+                TriggerServerEvent("inventory:server:UseItemSlot", i)
+            else
+                return
+            end
         end
     end, false)
     RegisterKeyMapping('slot' .. i, 'Uses the item in slot ' .. i, 'keyboard', i)
