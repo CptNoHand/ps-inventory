@@ -21,7 +21,7 @@ app.use(Quasar, { config: {} })
 app.mount('#inventory-menus')
 
 function showBlur() {
-    $.post('https://qb-inventory/showBlur');
+    $.post('https://pappu-inventorynp/showBlur');
 }
 
 var InventoryOption = "0, 0, 0";
@@ -73,7 +73,7 @@ $(document).on("dblclick", ".item-slot", function(e) {
         console.log(ItemInventory); // Check the console for the output
         console.log(ItemData); // Check the console for the output
         $.post(
-            "https://qb-inventory/UseItem",
+            "https://pappu-inventorynp/UseItem",
             JSON.stringify({
                 inventory: ItemInventory,
                 item: ItemData,
@@ -537,7 +537,7 @@ $(document).on("click", "#weapon-attachments", function(e) {
         FormatAttachmentInfo(ClickedItemData);
     } else {
         $.post(
-            "https://qb-inventory/Notify",
+            "https://pappu-inventorynp/Notify",
             JSON.stringify({
                 message: "Attachments are unavailable for this gun.",
                 type: "error",

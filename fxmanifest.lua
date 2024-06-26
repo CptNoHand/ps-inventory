@@ -1,8 +1,8 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'qb-inventory'
-version '1.0.4'
+description 'pappu-inventorynpnp'
+version '1.0.2'
 
 shared_scripts {
 	'config.lua',
@@ -23,11 +23,11 @@ client_scripts {
 
 
 ui_page {
-	'html/ui.html'
+	'html/pappunp.html'
 }
 
 files {
-	'html/ui.html',
+	'html/pappunp.html',
 	'html/css/main.css',
 	'html/js/app.js',
 	'html/images/*.svg',
