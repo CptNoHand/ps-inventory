@@ -1,8 +1,8 @@
 Config = {}
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add `setr UseTarget true` to use this and just that from true to false or the other way around)
 
-Config.MaxInventoryWeight = 250000 -- Max weight a player can carry (default 250kg, written in grams)
-Config.MaxInventorySlots = 41 -- Max inventory slots for a player
+Config.MaxInventoryWeight = 35000 -- Max weight a player can carry (default 120kg, written in grams)
+Config.MaxInventorySlots = 43 -- Max inventory slots for a player
 
 Config.CleanupDropTime = 15 * 60 -- How many seconds it takes for drops to be untouched before being deleted
 Config.MaxDropViewDistance = 12.5 -- The distance in GTA Units that a drop can be seen
@@ -47,7 +47,7 @@ Config.VendingItem = {
 }
 
 Config.CraftingItems = {
-    [1] = {
+    --[[[1] = {
         name = "lockpick",
         amount = 50,
         info = {},
@@ -214,13 +214,13 @@ Config.CraftingItems = {
         slot = 12,
         threshold = 1750,
         points = 12,
-    },
+    },--]]
 }
 
 Config.AttachmentCraftingLocation = vector3(88.91, 3743.88, 40.77) -- Only needed if not using target
 
 Config.AttachmentCrafting = {
-    [1] = {
+    --[[[1] = {
         name = "pistol_extendedclip",
         amount = 50,
         info = {},
@@ -333,7 +333,7 @@ Config.AttachmentCrafting = {
         slot = 8,
         threshold = 200,
         points = 8,
-    },
+    },--]]
 }
 
 BackEngineVehicles = {
